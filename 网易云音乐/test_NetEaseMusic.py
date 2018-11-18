@@ -44,7 +44,7 @@ for song in songList:
 print(totalList)
 print('\n')
 
-db = pymysql.connect(host="127.0.0.1", user="root", passwd="920804", db="spider")
+db = pymysql.connect(host="127.0.0.1", user="root", passwd="******", db="spider")
 print("成功连接MySQL数据库")
 cursor = db.cursor()
 cursor.execute("DROP TABLE IF EXISTS NetEaseCloudMusic")
