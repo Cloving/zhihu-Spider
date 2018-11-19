@@ -44,7 +44,7 @@ for song in songList:
 print(totalList)
 print('\n')
 
-db = pymysql.connect(host="127.0.0.1", user="root", passwd="******", db="spider")
+db = pymysql.connect(host="127.0.0.1", user="root", passwd="920804", db="spider")
 print("成功连接MySQL数据库")
 cursor = db.cursor()
 cursor.execute("DROP TABLE IF EXISTS NetEaseCloudMusic")
@@ -54,7 +54,7 @@ sql = '''CREATE TABLE NetEaseCloudMusic(
         musicName LONGTEXT,
         time LONGTEXT,
         singer LONGTEXT
-        )'''
+        )CHARSET=utf8'''
 cursor.execute(sql)
 
 # The format string is not really a normal Python format string.
