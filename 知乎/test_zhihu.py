@@ -1,3 +1,6 @@
+'''
+ 获取知乎首页的回答，存储到文本文件中
+'''
 import requests
 from pyquery import PyQuery as pq
 
