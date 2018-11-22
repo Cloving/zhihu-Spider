@@ -7,7 +7,7 @@ import requests
 from pymongo import MongoClient
 from pyquery import PyQuery as pq
 
-user_name = "ovilia"
+user_name = "******"
 limit = 7
 max_search_counts = 5
 params = {
@@ -26,7 +26,7 @@ headers = {
 }
 
 client = MongoClient('127.0.0.1',username='admin',
-                        password='920804',
+                        password='******',
                         authSource='admin',
                         authMechanism='SCRAM-SHA-1')
 db = client["zhihu"]
