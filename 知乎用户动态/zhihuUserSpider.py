@@ -10,7 +10,7 @@ from pyquery import PyQuery as pq
 
 class ZhihuUser:
   def __init__(self):
-    self.user_name = "ovilia"
+    self.user_name = "******"
     self.max_search_counts = 5
     self.params = {
       "limit": 7,
@@ -26,7 +26,7 @@ class ZhihuUser:
       "x-requested-with": "fetch"
     }
     self.client = MongoClient('127.0.0.1',username='admin',
-                        password='920804',
+                        password='******',
                         authSource='admin',
                         authMechanism='SCRAM-SHA-1')
     self.db = self.client["zhihu"]
