@@ -1,3 +1,4 @@
 .DS_Store
 .idea/*
 .vscode/*
+知乎用户动态/__pycache__/*
