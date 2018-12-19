@@ -72,7 +72,7 @@ class ZhihuUser(object):
     print("完成存储")
 
 if __name__ == "__main__":
-  username = 'ou-ran-xing-17'
+  username = '******'
   savepath = './result'
   savename = username + '.pkl'
   zhihu = ZhihuUser()
