@@ -1,6 +1,7 @@
 import pickle
 import os
 import jieba
+import re
 from pyecharts import Bar
 from pyecharts import Pie
 from pyecharts import Scatter
@@ -138,7 +139,7 @@ class ZhihuUserAnalysis():
   def statistic_word_frequency(self, texts, stopwords):
     statistic_dict = {}
     for text in texts:
-      temp = jieba.cut(text)
+      temp = jieba.cut(text, cut_all=False)
       for t in temp:
         if t in stopwords or t == 'Empty':
           continue;
@@ -149,7 +150,17 @@ class ZhihuUserAnalysis():
     return list(statistic_dict.items())
 
 if __name__ == "__main__":
-  with open('./result/ou-ran-xing-17.pkl', 'rb') as f:
+  for root, dirs, files in os.walk(os.path.join(os.path.dirname(__file__),'result')):
+    # print(root)  # 当前目录路径
+    # print(dirs)  # 当前路径下所有子目录
+    # print(files)  # 当前路径下所有非目录子文件
+    for file in files:
+      try:
+        file_name = re.search('(.*?).pkl', file).group()
+        break
+      except Exception as e:
+        continue
+  with open('./result/'+file_name, 'rb') as f:
     followers_data = pickle.load(f)
   analysis = ZhihuUserAnalysis()
   analysis.process_nickname_data()

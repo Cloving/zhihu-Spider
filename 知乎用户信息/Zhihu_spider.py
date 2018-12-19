@@ -14,9 +14,7 @@ class ZhihuUser(object):
       badge%5B%3F(type%3Dbest_answerer)%5D.topics&offset={offset}&limit=20'
     self.agent = UserAgent()
     self.header = {
-      'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) \
-                    AppleWebKit/537.36 (KHTML, like Gecko) \
-                    Chrome/70.0.3538.77 Safari/537.36'
+      'user-agent': self.agent.random
     }
   
   def start(self, username, savepath, savename):
@@ -74,7 +72,7 @@ class ZhihuUser(object):
     print("完成存储")
 
 if __name__ == "__main__":
-  username = '******'
+  username = 'ou-ran-xing-17'
   savepath = './result'
   savename = username + '.pkl'
   zhihu = ZhihuUser()
